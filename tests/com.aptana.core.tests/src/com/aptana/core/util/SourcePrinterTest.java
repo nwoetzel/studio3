@@ -9,7 +9,6 @@ package com.aptana.core.util;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;

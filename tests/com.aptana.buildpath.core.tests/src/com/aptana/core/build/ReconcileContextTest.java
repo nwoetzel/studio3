@@ -6,8 +6,6 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 import java.io.InputStream;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;

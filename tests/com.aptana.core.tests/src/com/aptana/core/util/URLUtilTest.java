@@ -16,8 +16,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import junit.framework.TestCase;
-
 public class URLUtilTest
 {
 	@Test

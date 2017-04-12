@@ -13,8 +13,6 @@ import static org.junit.Assert.*;
 import java.util.List;
 import java.util.Properties;
 
-import junit.framework.TestCase;
-
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;

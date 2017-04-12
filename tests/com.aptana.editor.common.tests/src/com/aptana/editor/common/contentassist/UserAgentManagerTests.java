@@ -14,8 +14,6 @@ import static org.junit.Assert.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import com.aptana.core.IUserAgent;

@@ -13,8 +13,6 @@ import static org.junit.Assert.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import junit.framework.TestCase;
-
 /**
  * @author Max Stepanov
  *

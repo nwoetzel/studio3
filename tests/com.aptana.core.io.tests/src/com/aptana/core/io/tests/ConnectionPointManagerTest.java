@@ -7,11 +7,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.junit.Test;
 
 import com.aptana.core.util.ResourceUtil;
 import com.aptana.ide.core.io.ConnectionPoint;

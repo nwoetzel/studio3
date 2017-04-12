@@ -15,8 +15,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
 public class LRUCacheWithSoftPrunedValuesTest
 {
 

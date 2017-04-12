@@ -9,7 +9,6 @@ package com.aptana.index.core.build;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import org.eclipse.core.runtime.CoreException;
 

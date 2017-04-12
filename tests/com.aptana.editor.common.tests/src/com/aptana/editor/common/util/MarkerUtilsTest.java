@@ -8,8 +8,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;

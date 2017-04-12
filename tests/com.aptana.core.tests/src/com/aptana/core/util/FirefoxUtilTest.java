@@ -15,8 +15,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.URL;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;

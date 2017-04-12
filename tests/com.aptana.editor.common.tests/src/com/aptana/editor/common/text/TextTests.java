@@ -3,10 +3,6 @@ package com.aptana.editor.common.text;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
 
 @RunWith(Suite.class)
 @SuiteClasses({RubyRegexpAutoIndentStrategyTest.class, SingleTokenScannerTest.class, })

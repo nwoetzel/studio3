@@ -9,7 +9,6 @@ package com.aptana.editor.common.scripting.snippets;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import org.eclipse.jface.text.Document;
 

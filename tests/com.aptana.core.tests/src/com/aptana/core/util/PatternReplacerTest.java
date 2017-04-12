@@ -9,7 +9,6 @@ package com.aptana.core.util;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import com.aptana.core.IMap;
 import com.aptana.core.util.replace.RegexPatternReplacer;

@@ -11,7 +11,6 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.TextViewer;

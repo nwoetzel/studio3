@@ -12,8 +12,6 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.IOException;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 

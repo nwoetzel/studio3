@@ -1,12 +1,9 @@
 package com.aptana.core.internal.build;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 import java.io.File;
 import java.net.URI;
 import java.util.List;
-
-import junit.framework.TestCase;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IncrementalProjectBuilder;

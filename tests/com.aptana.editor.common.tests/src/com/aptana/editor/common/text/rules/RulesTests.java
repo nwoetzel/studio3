@@ -10,9 +10,6 @@ package com.aptana.editor.common.text.rules;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import junit.framework.Test;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
 
 @RunWith(Suite.class)
 @SuiteClasses({CaseInsensitiveMultiLineRuleTest.class, TagRuleTest.class, RegexpRuleTest.class, WhitespaceDetectorTest.class, WordDetectorTest.class, SingleCharacterRuleTest.class, SingleTagRuleTest.class, ExtendedWordRuleTest.class, })

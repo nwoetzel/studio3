@@ -12,8 +12,6 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.net.URL;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.swt.SWT;

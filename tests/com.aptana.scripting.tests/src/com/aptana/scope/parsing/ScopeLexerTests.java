@@ -11,7 +11,6 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 import beaver.Symbol;
 
 /**

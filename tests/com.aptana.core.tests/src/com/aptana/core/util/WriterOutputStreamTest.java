@@ -20,8 +20,6 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import junit.framework.TestCase;
-
 /**
  * If tests fail, it may be because the default charset is non-UTF-8. You can simulate this in your env by setting a
  * command line JVM argument: -Dfile.encoding=US-ASCII

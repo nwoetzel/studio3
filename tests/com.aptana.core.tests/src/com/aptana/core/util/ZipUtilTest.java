@@ -17,8 +17,6 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;

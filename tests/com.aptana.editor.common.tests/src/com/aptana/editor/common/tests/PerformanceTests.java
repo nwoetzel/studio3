@@ -10,11 +10,6 @@ package com.aptana.editor.common.tests;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import java.text.MessageFormat;
-
-import junit.framework.Test;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
 
 import com.aptana.editor.common.internal.peer.CharacterPairMatcherPerfTest;
 import com.aptana.editor.common.internal.peer.PeerCharacterCloserPerfTest;

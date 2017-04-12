@@ -7,8 +7,6 @@ import static org.junit.Assert.*;
 import java.util.Collections;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 
 import com.aptana.buildpath.core.BuildPathCorePlugin;
