@@ -475,7 +475,7 @@ public class EclipseUtil
 			// against old API
 			try
 			{
-				Class klazz = Class.forName("org.eclipse.osgi.framework.internal.core.FrameworkProperties"); //$NON-NLS-1$
+				Class<?> klazz = Class.forName("org.eclipse.osgi.framework.internal.core.FrameworkProperties"); //$NON-NLS-1$
 				Method m = klazz.getMethod("clearProperty", String.class); //$NON-NLS-1$
 				m.invoke(null, propertyName);
 				return;

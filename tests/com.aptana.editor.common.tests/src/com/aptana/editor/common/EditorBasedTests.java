@@ -337,7 +337,7 @@ public abstract class EditorBasedTests
 	protected void handleCursorOffsets(IDocument document)
 	{
 		String source = document.get();
-		ArrayList cursorOffsets = new ArrayList<Integer>();
+		ArrayList<Integer> cursorOffsets = new ArrayList<Integer>();
 		int offset = source.indexOf('|');
 
 		while (offset != -1)
