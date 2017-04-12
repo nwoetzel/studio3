@@ -9,7 +9,6 @@ package com.aptana.editor.common.parsing;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
 
 import com.aptana.core.util.StringUtil;
 import com.aptana.parsing.ast.IParseNode;

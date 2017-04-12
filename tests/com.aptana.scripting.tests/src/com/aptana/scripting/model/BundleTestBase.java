@@ -12,8 +12,6 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.Path;
 
 import com.aptana.scripting.TestUtils;
