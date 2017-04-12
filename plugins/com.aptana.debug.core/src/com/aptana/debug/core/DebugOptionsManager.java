@@ -66,7 +66,7 @@ public class DebugOptionsManager implements IDebugEventSetListener
 	public static final String DETAIL_FORMATTER_IS_DISABLED = "0"; //$NON-NLS-1$
 
 	private final String modelIdentifier;
-	private final ListenerList changeListeners = new ListenerList();
+	private final ListenerList<IDetailFormattersChangeListener> changeListeners = new ListenerList<IDetailFormattersChangeListener>();
 	private IPreferenceChangeListener preferenceChangeListener;
 
 	/**

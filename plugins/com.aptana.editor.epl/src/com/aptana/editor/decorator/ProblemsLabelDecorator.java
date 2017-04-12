@@ -29,7 +29,7 @@ public class ProblemsLabelDecorator implements ILightweightLabelDecorator
 
 	private static final int ERROR = IMarker.SEVERITY_ERROR;
 	private static final int WARNING = IMarker.SEVERITY_WARNING;
-	private ListenerList fListeners;
+	private ListenerList<ILabelProviderListener> fListeners;
 	private IProblemChangedListener fProblemChangedListener;
 
 	/**
@@ -104,7 +104,7 @@ public class ProblemsLabelDecorator implements ILightweightLabelDecorator
 	{
 		if (fListeners == null)
 		{
-			fListeners = new ListenerList();
+			fListeners = new ListenerList<ILabelProviderListener>();
 		}
 		fListeners.add(listener);
 		if (fProblemChangedListener == null)

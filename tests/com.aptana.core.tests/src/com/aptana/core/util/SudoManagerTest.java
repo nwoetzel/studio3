@@ -167,8 +167,8 @@ public class SudoManagerTest
 				}
 			}
 		};
-		Future testFuture = executor.submit(testTask);
-		Future f = executor.submit(writeTask);
+		Future<?> testFuture = executor.submit(testTask);
+		Future<?> f = executor.submit(writeTask);
 		try
 		{
 			while (!testFuture.isDone())

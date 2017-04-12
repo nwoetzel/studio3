@@ -89,7 +89,7 @@ import com.aptana.usage.UsagePlugin;
 	private List<IMemento> unresolvedConnections = Collections.synchronizedList(new ArrayList<IMemento>());
 	private boolean dirty = false;
 
-	private ListenerList listeners = new ListenerList();
+	private ListenerList<IConnectionPointListener> listeners = new ListenerList<IConnectionPointListener>();
 
 	/**
 	 * 

@@ -109,7 +109,7 @@ public abstract class CustomAbstractInformationControl implements IInformationCo
 	/** Listener for shell activation and deactivation. */
 	private Listener fShellListener;
 	/** All focus listeners registered to this information control. */
-	private final ListenerList fFocusListeners = new ListenerList(ListenerList.IDENTITY);
+	private final ListenerList<FocusListener> fFocusListeners = new ListenerList<FocusListener>(ListenerList.IDENTITY);
 
 	/** Size constraints, x is the maxWidth and y is the maxHeight, or <code>null</code> if not set. */
 	private Point fSizeConstraints;

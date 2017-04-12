@@ -173,7 +173,7 @@ public class LocalWebServer extends SimpleWebServer
 		}
 	}
 
-	private void runServer(InetSocketAddress socketAddress, HttpAsyncRequestHandler httpRequestHandler)
+	private void runServer(InetSocketAddress socketAddress, HttpAsyncRequestHandler<?> httpRequestHandler)
 	{
 		HttpParams params = new BasicHttpParams();
 		params.setIntParameter(CoreConnectionPNames.SO_TIMEOUT, SOCKET_TIMEOUT)

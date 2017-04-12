@@ -172,7 +172,7 @@ public class CustomBrowserInformationControl extends CustomAbstractInformationCo
 	 * 
 	 * @since 3.4
 	 */
-	private ListenerList/* <IInputChangedListener> */fInputChangeListeners = new ListenerList(ListenerList.IDENTITY);
+	private ListenerList<IInputChangedListener> fInputChangeListeners = new ListenerList<IInputChangedListener>(ListenerList.IDENTITY);
 
 	/**
 	 * The symbolic name of the font used for size computations, or <code>null</code> to use dialog font.

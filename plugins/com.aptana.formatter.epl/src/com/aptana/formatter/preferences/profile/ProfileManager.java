@@ -60,7 +60,7 @@ public class ProfileManager implements IProfileManager
 	 * The available profiles, sorted by name.
 	 */
 	private final List<IProfile> fProfilesByName;
-	private ListenerList listeners;
+	private ListenerList<IPropertyChangeListener> listeners;
 	/**
 	 * The currently selected profile.
 	 */
@@ -148,7 +148,7 @@ public class ProfileManager implements IProfileManager
 			}
 			fSelected.put(null, workspaceSelectedProfile);
 		}
-		listeners = new ListenerList();
+		listeners = new ListenerList<IPropertyChangeListener>();
 	}
 
 	private Map<String, String> loadDefaultSettings()

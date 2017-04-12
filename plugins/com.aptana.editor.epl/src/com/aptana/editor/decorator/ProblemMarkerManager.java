@@ -110,7 +110,7 @@ public class ProblemMarkerManager implements IResourceChangeListener, IAnnotatio
 		}
 	}
 
-	private ListenerList fListeners;
+	private ListenerList<IProblemChangedListener> fListeners;
 
 	private Set<IResource> fResourcesWithMarkerChanges;
 	private Set<IResource> fResourcesWithAnnotationChanges;
@@ -119,7 +119,7 @@ public class ProblemMarkerManager implements IResourceChangeListener, IAnnotatio
 
 	public ProblemMarkerManager()
 	{
-		fListeners = new ListenerList();
+		fListeners = new ListenerList<IProblemChangedListener>();
 		fResourcesWithMarkerChanges = new HashSet<IResource>();
 		fResourcesWithAnnotationChanges = new HashSet<IResource>();
 	}

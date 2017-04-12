@@ -64,7 +64,7 @@ public final class ServerManager implements IServerManager
 	private List<IServerType> types = new ArrayList<IServerType>();
 	private List<IServer> serverConfigurations = Collections.synchronizedList(new ArrayList<IServer>());
 	private List<IMemento> unresolvedElements = new ArrayList<IMemento>();
-	private ListenerList listeners = new ListenerList(ListenerList.IDENTITY);
+	private ListenerList<IServerChangeListener> listeners = new ListenerList<IServerChangeListener>(ListenerList.IDENTITY);
 
 	public ServerManager()
 	{
