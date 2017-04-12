@@ -23,7 +23,6 @@ import org.eclipse.core.runtime.Path;
 import com.aptana.core.logging.IdeLog;
 import com.aptana.core.util.IOUtil;
 import com.aptana.core.util.ProcessRunner;
-import com.aptana.core.util.ProcessUtil;
 import com.aptana.core.util.StringUtil;
 import com.aptana.plist.PListParserFactory;
 

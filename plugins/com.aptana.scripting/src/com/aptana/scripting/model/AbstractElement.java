@@ -17,8 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.core.internal.utils.StringPool;
-
 import com.aptana.core.logging.IdeLog;
 import com.aptana.core.util.ObjectUtil;
 import com.aptana.core.util.SourcePrinter;

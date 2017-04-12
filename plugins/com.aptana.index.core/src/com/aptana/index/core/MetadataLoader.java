@@ -29,7 +29,6 @@ import org.osgi.service.prefs.BackingStoreException;
 
 import com.aptana.core.logging.IdeLog;
 import com.aptana.core.util.CollectionsUtil;
-import com.aptana.core.util.EclipseUtil;
 
 /**
  * MetadataLoader

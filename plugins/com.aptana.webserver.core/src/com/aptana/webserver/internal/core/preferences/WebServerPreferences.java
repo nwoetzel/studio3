@@ -19,7 +19,6 @@ import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 
 import com.aptana.core.logging.IdeLog;
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.core.util.SocketUtil;
 import com.aptana.webserver.core.WebServerCorePlugin;
 import com.aptana.webserver.core.preferences.IWebServerPreferenceConstants;

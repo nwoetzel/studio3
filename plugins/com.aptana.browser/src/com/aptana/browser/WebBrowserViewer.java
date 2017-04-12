@@ -9,8 +9,6 @@
 
 package com.aptana.browser;
 
-import java.util.Arrays;
-
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuCreator;

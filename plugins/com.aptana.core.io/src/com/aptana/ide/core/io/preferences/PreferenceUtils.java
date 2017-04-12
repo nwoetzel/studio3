@@ -13,7 +13,6 @@ import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.osgi.service.prefs.BackingStoreException;
 
 import com.aptana.core.logging.IdeLog;
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.ide.core.io.CoreIOPlugin;
 
 public class PreferenceUtils

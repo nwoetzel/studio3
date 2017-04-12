@@ -117,7 +117,6 @@ import org.osgi.service.prefs.BackingStoreException;
 
 import com.aptana.core.CoreStrings;
 import com.aptana.core.logging.IdeLog;
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.core.util.StringUtil;
 import com.aptana.scope.ScopeSelector;
 import com.aptana.theme.ConsoleThemer;

@@ -23,7 +23,6 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.editor.common.AbstractThemeableEditor;
 import com.aptana.editor.common.CommonEditorPlugin;
 import com.aptana.editor.common.CommonSourceViewerConfiguration;
