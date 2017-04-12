@@ -25,7 +25,6 @@ public class EnvironmentVariableVariableResolver extends SimpleTemplateVariableR
 		super(VARIABLE_TYPE, VARIABLE_TYPE);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void resolve(TemplateVariable variable, TemplateContext context)
 	{

@@ -584,7 +584,6 @@ public class CommandElement extends AbstractBundleElement
 	 * @param contextMap
 	 * @param environment
 	 */
-	@SuppressWarnings("deprecation")
 	void populateEnvironment(Map<String, Object> contextMap, Map<String, String> environment)
 	{
 		environment.putAll(ShellExecutable.getEnvironment());

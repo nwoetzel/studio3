@@ -155,7 +155,6 @@ public class ThemeableEditorExtension
 		return ThemePlugin.getDefault().getThemeManager();
 	}
 
-	@SuppressWarnings("unchecked")
 	private void overrideRulerColors()
 	{
 		IThemeableEditor editor = this.fEditor.get();
