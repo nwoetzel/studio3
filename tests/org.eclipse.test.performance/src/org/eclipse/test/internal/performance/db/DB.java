@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.eclipse.test.internal.performance.InternalPerformanceMeter;
 import org.eclipse.test.internal.performance.PerformanceTestPlugin;

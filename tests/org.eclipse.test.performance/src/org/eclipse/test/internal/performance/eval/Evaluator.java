@@ -11,7 +11,7 @@
 package org.eclipse.test.internal.performance.eval;
 
 import java.util.HashSet;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.eclipse.test.internal.performance.InternalPerformanceMeter;
 import org.eclipse.test.internal.performance.PerformanceTestPlugin;

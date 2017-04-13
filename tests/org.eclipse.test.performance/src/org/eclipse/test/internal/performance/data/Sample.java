@@ -15,7 +15,7 @@ import java.util.Set;
 
 import org.eclipse.test.performance.Dimension;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  * @since 3.1
