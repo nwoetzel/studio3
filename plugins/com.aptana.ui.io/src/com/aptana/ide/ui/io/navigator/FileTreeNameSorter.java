@@ -13,7 +13,7 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 
 import com.aptana.ide.core.io.IConnectionPointCategory;
 import com.aptana.ide.core.io.LocalRoot;
@@ -22,7 +22,7 @@ import com.aptana.ide.ui.io.FileSystemUtils;
 /**
  * @author Max Stepanov
  */
-public class FileTreeNameSorter extends ViewerSorter
+public class FileTreeNameSorter extends ViewerComparator
 {
 
 	/*
