@@ -481,8 +481,8 @@ public void init(IWorkbench workbench) {
  */
 void initDimensionsLists() {
 	// Dimensions lists
-	java.util.List dimensions = PerformanceTestPlugin.getDimensions();
-	Iterator names = dimensions.iterator();
+	java.util.List<String> dimensions = PerformanceTestPlugin.getDimensions();
+	Iterator<String> names = dimensions.iterator();
 	while (names.hasNext()) {
 		String name = (String) names.next();
 		this.defaultDimensionCombo.add(name);
@@ -879,7 +879,7 @@ public boolean performOk() {
 	if (hasBuildsView) {
 		storeValues();
 		try {
-			IEclipsePreferences preferences = new InstanceScope().getNode(PLUGIN_ID);
+			IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(PLUGIN_ID);
 			preferences.flush();
 			this.buildsView.resetView();
 		} catch (BackingStoreException e) {

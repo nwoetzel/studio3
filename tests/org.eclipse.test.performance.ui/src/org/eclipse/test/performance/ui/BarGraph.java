@@ -55,11 +55,11 @@ public class BarGraph {
 	}
 
 	private String fTitle;
-	private List fItems;
+	private List<BarItem> fItems;
 
 	BarGraph(String title) {
 		this.fTitle= title;
-		this.fItems= new ArrayList();
+		this.fItems= new ArrayList<BarItem>();
 	}
 
 	public void addItem(String name, double[] stats, String url, String slow, boolean significant) {

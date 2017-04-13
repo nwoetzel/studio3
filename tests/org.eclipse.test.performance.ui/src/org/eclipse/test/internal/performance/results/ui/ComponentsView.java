@@ -27,8 +27,8 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
@@ -108,7 +108,7 @@ public ComponentsView() {
 	super();
 
 	// Get preferences
-	this.preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+	this.preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 }
 
 /*
@@ -167,7 +167,7 @@ public void createPartControl(Composite parent) {
 	this.viewer.setLabelProvider(labelProvider);
 
 	// Set the children sorter
-	ViewerSorter nameSorter = new ViewerSorter() {
+	ViewerComparator nameSorter = new ViewerComparator() {
 
 		// Sort children using specific comparison (see the implementation
 		// of the #compareTo(Object) in the ResultsElement hierarchy
@@ -175,16 +175,16 @@ public void createPartControl(Composite parent) {
 			// Config and Build results are sorted in reverse order
 			if (e1 instanceof BuildResultsElement) {
 				ResultsElement element = (ResultsElement) e2;
-				return element.compareTo(e1);
+				return element.compareTo((ResultsElement)e1);
 			}
 			if (e1 instanceof ResultsElement) {
 				ResultsElement element = (ResultsElement) e1;
-				return element.compareTo(e2);
+				return element.compareTo((ResultsElement)e2);
 			}
 			return super.compare(view, e1, e2);
 		}
 	};
-	this.viewer.setSorter(nameSorter);
+	this.viewer.setComparator(nameSorter);
 
 	// Add results view as listener to viewer selection changes
 	Display.getDefault().asyncExec(new Runnable() {

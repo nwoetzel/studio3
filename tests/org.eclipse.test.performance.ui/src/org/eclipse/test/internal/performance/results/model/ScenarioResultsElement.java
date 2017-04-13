@@ -35,9 +35,9 @@ public class ScenarioResultsElement extends ResultsElement {
 	private static final TextPropertyDescriptor SCENARIO_FILE_NAME_DESCRIPTOR = new TextPropertyDescriptor(P_ID_SCENARIO_FILE_NAME, P_STR_SCENARIO_FILE_NAME);
 	private static final TextPropertyDescriptor SCENARIO_SHORT_NAME_DESCRIPTOR = new TextPropertyDescriptor(P_ID_SCENARIO_SHORT_NAME, P_STR_SCENARIO_SHORT_NAME);
 
-    private static Vector DESCRIPTORS;
-    static Vector initDescriptors(int status) {
-        DESCRIPTORS = new Vector();
+    private static Vector<IPropertyDescriptor> DESCRIPTORS;
+    static Vector<IPropertyDescriptor> initDescriptors(int status) {
+        DESCRIPTORS = new Vector<IPropertyDescriptor>();
 		// Status category
 		DESCRIPTORS.add(getInfosDescriptor(status));
 		DESCRIPTORS.add(getWarningsDescriptor(status));
@@ -55,7 +55,7 @@ public class ScenarioResultsElement extends ResultsElement {
 		COMMENT_DESCRIPTOR.setCategory("Survey");
         return DESCRIPTORS;
 	}
-    static Vector getDescriptors() {
+    static Vector<IPropertyDescriptor> getDescriptors() {
     	return DESCRIPTORS;
 	}
 
@@ -75,7 +75,7 @@ public String getLabel(Object o) {
  * @see org.eclipse.ui.views.properties.IPropertySource#getPropertyDescriptors()
  */
 public IPropertyDescriptor[] getPropertyDescriptors() {
-	Vector descriptors = getDescriptors();
+	Vector<IPropertyDescriptor> descriptors = getDescriptors();
 	if (descriptors == null) {
 		descriptors = initDescriptors(getStatus());
 	}
@@ -137,7 +137,7 @@ StringBuffer getFailures(StringBuffer buffer, int kind, StringBuffer excluded) {
 		if (childrenBuffer.length() > 0) {
 			buffer.append("	");
 			buffer.append(getLabel(null));
-			IEclipsePreferences preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+			IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 			String comment = preferences.get(getId(), null);
 			if (comment != null) {
 				if ((kind & IPerformancesConstants.STATUS_VALUES) != 0) {

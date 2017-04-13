@@ -92,7 +92,7 @@ public class BuildsComparisonView extends ViewPart implements ISelectionChangedL
  * 	- register the view as a properties listener
  */
 public BuildsComparisonView() {
-	this.preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+	this.preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 	this.preferences.addPreferenceChangeListener(this);
 	// TODO should be done only once!
 	Util.initMilestones(this.preferences);

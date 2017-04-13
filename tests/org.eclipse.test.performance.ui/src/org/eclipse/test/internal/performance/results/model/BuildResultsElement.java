@@ -56,9 +56,9 @@ public class BuildResultsElement extends ResultsElement {
 	private static final PropertyDescriptor BUILD_TEST_ERROR_DESCRIPTOR = new PropertyDescriptor(P_ID_BUILD_ERROR, P_STR_BUILD_ERROR);
 	private static final PropertyDescriptor BUILD_STUDENTS_TTEST_DESCRIPTOR = new PropertyDescriptor(P_ID_BUILD_TTEST, P_STR_BUILD_TTEST);
 
-    private static Vector DESCRIPTORS;
-    static Vector initDescriptors(int status) {
-		DESCRIPTORS = new Vector();
+    private static Vector<IPropertyDescriptor> DESCRIPTORS;
+    static Vector<IPropertyDescriptor> initDescriptors(int status) {
+		DESCRIPTORS = new Vector<IPropertyDescriptor>();
 		// Status category
 		DESCRIPTORS.add(getInfosDescriptor(status));
 		DESCRIPTORS.add(getWarningsDescriptor(status));
@@ -89,7 +89,7 @@ public class BuildResultsElement extends ResultsElement {
         return DESCRIPTORS;
 	}
     static ComboBoxPropertyDescriptor getInfosDescriptor(int status) {
-		List list = new ArrayList();
+		List<String> list = new ArrayList<String>();
 		if ((status & SMALL_VALUE) != 0) {
 			list.add("This test and/or its variation has a small value, hence it may not be necessary to spend time on fixing it if a regression occurs");
 		}
@@ -105,7 +105,7 @@ public class BuildResultsElement extends ResultsElement {
 		return infoDescriptor;
 	}
     static PropertyDescriptor getWarningsDescriptor(int status) {
-		List list = new ArrayList();
+		List<String> list = new ArrayList<String>();
 		if ((status & BIG_ERROR) != 0) {
 			list.add("The error on this test is over the 3% threshold, hence its result may not be really reliable");
 		}
@@ -129,7 +129,7 @@ public class BuildResultsElement extends ResultsElement {
 		warningDescriptor.setCategory("Status");
 		return warningDescriptor;
     }
-    static Vector getDescriptors() {
+    static Vector<IPropertyDescriptor> getDescriptors() {
     	return DESCRIPTORS;
 	}
 
@@ -147,15 +147,14 @@ public BuildResultsElement(String name, ResultsElement parent) {
 	initInfo();
 }
 
-public int compareTo(Object o) {
-	if (o instanceof BuildResultsElement && getName() != null) {
-		BuildResultsElement element = (BuildResultsElement)o;
+public int compareTo(BuildResultsElement element) {
+	if (getName() != null) {
 		if (element.getName() != null) {
 			String buildDate = Util.getBuildDate(element.name);
 			return Util.getBuildDate(this.name).compareTo(buildDate);
 		}
 	}
-	return super.compareTo(o);
+	return super.compareTo(element);
 }
 
 ResultsElement createChild(AbstractResults testResults) {
@@ -187,7 +186,7 @@ public Object getEditableValue() {
  * @see org.eclipse.ui.views.properties.IPropertySource#getPropertyDescriptors()
  */
 public IPropertyDescriptor[] getPropertyDescriptors() {
-	Vector descriptors = getDescriptors();
+	Vector<IPropertyDescriptor> descriptors = getDescriptors();
 	if (descriptors == null) {
 		descriptors = initDescriptors(getStatus());
 	}

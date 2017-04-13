@@ -43,9 +43,9 @@ public class ComponentResultsElement extends ResultsElement {
 	private static final PropertyDescriptor CURRENT_BUILD_DESCRIPTOR = new PropertyDescriptor(P_ID_CURRENT_BUILD, P_STR_CURRENT_BUILD);
 	private static final PropertyDescriptor BASELINE_BUILD_DESCRIPTOR = new PropertyDescriptor(P_ID_BASELINE_BUILD, P_STR_BASELINE_BUILD);
 
-    private static Vector DESCRIPTORS;
-    static Vector initDescriptors(int status) {
-        DESCRIPTORS = new Vector();
+    private static Vector<IPropertyDescriptor> DESCRIPTORS;
+    static Vector<IPropertyDescriptor> initDescriptors(int status) {
+        DESCRIPTORS = new Vector<IPropertyDescriptor>();
 		// Status category
 		DESCRIPTORS.add(getInfosDescriptor(status));
 		DESCRIPTORS.add(getWarningsDescriptor(status));
@@ -63,7 +63,7 @@ public class ComponentResultsElement extends ResultsElement {
 		COMMENT_DESCRIPTOR.setCategory("Survey");
         return DESCRIPTORS;
 	}
-    static Vector getDescriptors() {
+    static Vector<IPropertyDescriptor> getDescriptors() {
     	return DESCRIPTORS;
 	}
 
@@ -106,7 +106,7 @@ public List getConfigNumbers(String configName, boolean fingerprints) {
  * @see org.eclipse.ui.views.properties.IPropertySource#getPropertyDescriptors()
  */
 public IPropertyDescriptor[] getPropertyDescriptors() {
-	Vector descriptors = getDescriptors();
+	Vector<IPropertyDescriptor> descriptors = getDescriptors();
 	if (descriptors == null) {
 		descriptors = initDescriptors(getStatus());
 	}
@@ -211,7 +211,7 @@ StringBuffer getFailures(StringBuffer buffer, int kind, StringBuffer excluded) {
 		// Write status on file if not excluded
 		if (childrenBuffer.length() > 0) {
 			buffer.append(getName());
-			IEclipsePreferences preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+			IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 			String comment = preferences.get(getId(), null);
 			if (comment != null) {
 				if ((kind & IPerformancesConstants.STATUS_VALUES) != 0) {

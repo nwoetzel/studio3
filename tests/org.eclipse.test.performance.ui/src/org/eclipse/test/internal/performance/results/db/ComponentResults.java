@@ -44,14 +44,14 @@ public ComponentResults(AbstractResults parent, String name)
 	this.printStream = parent.printStream;
 }
 
-Set getAllBuildNames()
+Set<String> getAllBuildNames()
 {
-	Set buildNames = new HashSet();
+	Set<String> buildNames = new HashSet<String>();
 	int size = size();
 	for (int i = 0; i < size; i++)
 	{
 		ScenarioResults scenarioResults = (ScenarioResults) this.children.get(i);
-		Set builds = scenarioResults.getAllBuildNames();
+		Set<String> builds = scenarioResults.getAllBuildNames();
 		buildNames.addAll(builds);
 	}
 	return buildNames;
@@ -69,15 +69,15 @@ public String[] getAllSortedBuildNames()
 
 String[] getAllSortedBuildNames(final boolean reverse)
 {
-	Set allBuildNames = getAllBuildNames();
+	Set<String> allBuildNames = getAllBuildNames();
 	String[] sortedNames = new String[allBuildNames.size()];
 	allBuildNames.toArray(sortedNames);
-	Arrays.sort(sortedNames, new Comparator()
+	Arrays.sort(sortedNames, new Comparator<String>()
 	{
-		public int compare(Object o1, Object o2)
+		public int compare(String o1, String o2)
 		{
-			String s1 = (String) (reverse ? o2 : o1);
-			String s2 = (String) (reverse ? o1 : o2);
+			String s1 = (reverse ? o2 : o1);
+			String s2 = (reverse ? o1 : o2);
 			return Util.getBuildDate(s1).compareTo(Util.getBuildDate(s2));
 		}
 	});
@@ -107,7 +107,7 @@ ComponentResults getComponentResults()
  *         <li>{@link #BASELINE_ERROR_INDEX}: the error made while measuring the baseline value</li>
  *         </ul>
  */
-public List getConfigNumbers(String configName, boolean fingerprints, List differences)
+public List<List<Object>> getConfigNumbers(String configName, boolean fingerprints, List<List<Object>> differences)
 {
 
 	// Initialize lists
@@ -115,7 +115,7 @@ public List getConfigNumbers(String configName, boolean fingerprints, List diffe
 	int length = scenarios.length;
 
 	// Print scenario names line
-	List firstLine = new ArrayList();
+	List<Object> firstLine = new ArrayList<Object>();
 	for (int i = 0; i < length; i++)
 	{
 		ScenarioResults scenarioResults = (ScenarioResults) scenarios[i];
@@ -135,7 +135,7 @@ public List getConfigNumbers(String configName, boolean fingerprints, List diffe
 	differences.add(firstLine);
 	for (int i = 0; i < buildsLength; i++)
 	{
-		List line = new ArrayList();
+		List<Object> line = new ArrayList<Object>();
 		String buildName = builds[i];
 		line.add(buildName);
 		if (!buildName.startsWith(DB_Results.getDbBaselinePrefix()))
@@ -207,12 +207,12 @@ public List getConfigNumbers(String configName, boolean fingerprints, List diffe
  * Math.sqrt(baselineError*baselineError + currentError*currentError) / baselineValue; } return values; }
  */
 
-private ScenarioResults getScenarioResults(List scenarios, int searchedId)
+private ScenarioResults getScenarioResults(List<ScenarioResults> scenarios, int searchedId)
 {
 	int size = scenarios.size();
 	for (int i = 0; i < size; i++)
 	{
-		ScenarioResults scenarioResults = (ScenarioResults) scenarios.get(i);
+		ScenarioResults scenarioResults = scenarios.get(i);
 		if (scenarioResults.id == searchedId)
 		{
 			return scenarioResults;
@@ -230,10 +230,10 @@ private ScenarioResults getScenarioResults(List scenarios, int searchedId)
  *            Configuration name
  * @return A list of {@link ScenarioResults scenario results} which have a summary
  */
-public List getSummaryScenarios(boolean global, String config)
+public List<ScenarioResults> getSummaryScenarios(boolean global, String config)
 {
 	int size = size();
-	List scenarios = new ArrayList(size);
+	List<ScenarioResults> scenarios = new ArrayList<ScenarioResults>(size);
 	for (int i = 0; i < size; i++)
 	{
 		ScenarioResults scenarioResults = (ScenarioResults) this.children.get(i);
@@ -284,7 +284,7 @@ private String lastBuildName(int kind)
 /*
  * Read local file contents and populate the results model with the collected information.
  */
-String readLocalFile(File dir, List scenarios) throws FileNotFoundException
+String readLocalFile(File dir, List<ScenarioResults> scenarios) throws FileNotFoundException
 {
 	// if (!dir.exists()) return null;
 	File dataFile = new File(dir, getName() + ".dat"); //$NON-NLS-1$
@@ -352,7 +352,7 @@ String readLocalFile(File dir, List scenarios) throws FileNotFoundException
  * Read the database values for a build name and a list of scenarios. The database is read only if the components
  * does not already knows the given build (i.e. if it has not been already read) or if the force arguments is set.
  */
-void updateBuild(String buildName, List scenarios, boolean force, File dataDir, SubMonitor subMonitor,
+void updateBuild(String buildName, List<ScenarioResults> scenarios, boolean force, File dataDir, SubMonitor subMonitor,
 		PerformanceResults.RemainingTimeGuess timeGuess)
 {
 

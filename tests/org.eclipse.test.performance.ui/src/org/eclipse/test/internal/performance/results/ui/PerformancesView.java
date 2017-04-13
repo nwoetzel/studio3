@@ -189,7 +189,7 @@ public abstract class PerformancesView extends ViewPart implements ISelectionCha
 	{
 
 		// Get preferences
-		this.preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+		this.preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 
 		// Init db constants
 		int eclipseVersion = this.preferences.getInt(IPerformancesConstants.PRE_ECLIPSE_VERSION,

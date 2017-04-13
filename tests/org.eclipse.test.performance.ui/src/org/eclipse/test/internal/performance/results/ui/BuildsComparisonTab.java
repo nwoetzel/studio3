@@ -91,7 +91,7 @@ public class BuildsComparisonTab {
  */
 public BuildsComparisonTab(String name) {
     this.componentName = name;
-	this.preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+	this.preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 }
 
 /**

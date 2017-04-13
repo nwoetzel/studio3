@@ -157,9 +157,9 @@ public class ConfigResults extends AbstractResults
 	 *            The pattern of searched builds
 	 * @return The list of the builds which names match the given pattern. The list is ordered by build results date.
 	 */
-	public List getBuilds(String buildPattern)
+	public List<BuildResults> getBuilds(String buildPattern)
 	{
-		List builds = new ArrayList();
+		List<BuildResults> builds = new ArrayList<BuildResults>();
 		int size = size();
 		for (int i = 0; i < size; i++)
 		{
@@ -179,10 +179,10 @@ public class ConfigResults extends AbstractResults
 	 *            Name of the last build (included)
 	 * @return The list of the builds which precedes the given build name.
 	 */
-	public List getBuildsBefore(String buildName)
+	public List<BuildResults> getBuildsBefore(String buildName)
 	{
 		String buildDate = Util.getBuildDate(buildName);
-		List builds = new ArrayList();
+		List<BuildResults> builds = new ArrayList<BuildResults>();
 		int size = size();
 		for (int i = 0; i < size; i++)
 		{
@@ -202,9 +202,9 @@ public class ConfigResults extends AbstractResults
 	 *            List of expected prefixes
 	 * @return A list of builds which names start with one of the given patterns.
 	 */
-	public List getBuildsMatchingPrefixes(List prefixes)
+	public List<AbstractResults> getBuildsMatchingPrefixes(List<String> prefixes)
 	{
-		List builds = new ArrayList();
+		List<AbstractResults> builds = new ArrayList<AbstractResults>();
 		int size = size();
 		int length = prefixes.size();
 		for (int i = 0; i < size; i++)
@@ -213,7 +213,7 @@ public class ConfigResults extends AbstractResults
 			String buildName = buildResults.getName();
 			for (int j = 0; j < length; j++)
 			{
-				if (buildName.startsWith((String) prefixes.get(j)))
+				if (buildName.startsWith( prefixes.get(j)))
 				{
 					builds.add(buildResults);
 				}
@@ -460,7 +460,7 @@ public class ConfigResults extends AbstractResults
 	 *         <li>3: coefficient of variation of these values</li>
 	 *         </ul>
 	 */
-	public double[] getStatistics(List prefixes)
+	public double[] getStatistics(List<String> prefixes)
 	{
 		return getStatistics(prefixes, DB_Results.getDefaultDimension().getId());
 	}
@@ -481,7 +481,7 @@ public class ConfigResults extends AbstractResults
 	 *         <li>3: coefficient of variation of these values</li>
 	 *         </ul>
 	 */
-	public double[] getStatistics(List prefixes, int dim_id)
+	public double[] getStatistics(List<String> prefixes, int dim_id)
 	{
 		int size = size();
 		int length = prefixes == null ? 0 : prefixes.size();
@@ -676,9 +676,9 @@ public class ConfigResults extends AbstractResults
 	 *            Number of last nightly builds to return
 	 * @return Last n nightly build names preceding current.
 	 */
-	public List lastNightlyBuildNames(int n)
+	public List<String> lastNightlyBuildNames(int n)
 	{
-		List labels = new ArrayList();
+		List<String> labels = new ArrayList<String>();
 		for (int i = size() - 2; i >= 0; i--)
 		{
 			BuildResults buildResults = (BuildResults) this.children.get(i);

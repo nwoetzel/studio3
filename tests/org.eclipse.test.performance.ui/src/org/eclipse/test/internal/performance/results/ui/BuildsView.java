@@ -38,7 +38,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -291,10 +291,8 @@ public class BuildsView extends PerformancesView {
 	 *
 	 * @see Util#getBuildDate(String)
 	 */
-	class BuildDateComparator implements Comparator {
-		public int compare(Object o1, Object o2) {
-	        String s1 = (String) o1;
-	        String s2 = (String) o2;
+	class BuildDateComparator implements Comparator<String> {
+		public int compare(String s1, String s2) {
 	        return Util.getBuildDate(s1).compareTo(Util.getBuildDate(s2));
 	    }
 	}
@@ -323,7 +321,7 @@ public class BuildsView extends PerformancesView {
  * Default constructor.
  */
 public BuildsView() {
-	this.preferences = new InstanceScope().getNode(IPerformancesConstants.PLUGIN_ID);
+	this.preferences = InstanceScope.INSTANCE.getNode(IPerformancesConstants.PLUGIN_ID);
 	this.preferences.addPreferenceChangeListener(this);
 }
 
@@ -398,18 +396,18 @@ public void createPartControl(Composite parent) {
 	this.viewer.setLabelProvider(labelProvider);
 
 	// Set the children sorter
-	ViewerSorter nameSorter = new ViewerSorter() {
+	ViewerComparator nameSorter = new ViewerComparator() {
 
 		// Sort children using specific comparison (see the implementation
 		// of the #compareTo(Object) in the ResultsElement hierarchy
 		public int compare(Viewer view, Object e1, Object e2) {
 			if (e2 instanceof ResultsElement) {
-				return ((ResultsElement) e2).compareTo(e1);
+				return ((ResultsElement) e2).compareTo((ResultsElement)e1);
 			}
 			return super.compare(view, e1, e2);
 		}
 	};
-	this.viewer.setSorter(nameSorter);
+	this.viewer.setComparator(nameSorter);
 
 	// Add results view as listener to viewer selection changes
 	Display.getDefault().asyncExec(new Runnable() {

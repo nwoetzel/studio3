@@ -55,9 +55,9 @@ public class ConfigResultsElement extends ResultsElement {
 	private static final PropertyDescriptor CONFIG_DELTA_DESCRIPTOR = new PropertyDescriptor(P_ID_CONFIG_DELTA, P_STR_CONFIG_DELTA);
 	private static final PropertyDescriptor CONFIG_ERROR_DESCRIPTOR = new PropertyDescriptor(P_ID_CONFIG_ERROR, P_STR_CONFIG_ERROR);
 
-    private static Vector DESCRIPTORS;
-    static Vector initDescriptors(int status) {
-		DESCRIPTORS = new Vector();
+    private static Vector<IPropertyDescriptor> DESCRIPTORS;
+    static Vector<IPropertyDescriptor> initDescriptors(int status) {
+		DESCRIPTORS = new Vector<IPropertyDescriptor>();
 		// Status category
 		DESCRIPTORS.add(getInfosDescriptor(status));
 		DESCRIPTORS.add(getWarningsDescriptor(status));
@@ -86,7 +86,7 @@ public class ConfigResultsElement extends ResultsElement {
 		return DESCRIPTORS;
 	}
     static ComboBoxPropertyDescriptor getInfosDescriptor(int status) {
-		List list = new ArrayList();
+		List<String> list = new ArrayList<String>();
 		if ((status & SMALL_VALUE) != 0) {
 			list.add("This test and/or its variation has a small value on this machine, hence it may not be necessary to spend time on fixing it if a regression occurs");
 		}
@@ -102,7 +102,7 @@ public class ConfigResultsElement extends ResultsElement {
 		return infoDescriptor;
 	}
     static PropertyDescriptor getWarningsDescriptor(int status) {
-		List list = new ArrayList();
+		List<String> list = new ArrayList<String>();
 		if ((status & BIG_ERROR) != 0) {
 			list.add("The error on this machine is over the 3% threshold, hence its result may not be really reliable");
 		}
@@ -129,7 +129,7 @@ public class ConfigResultsElement extends ResultsElement {
 		warningDescriptor.setCategory("Status");
 		return warningDescriptor;
 	}
-    static Vector getDescriptors() {
+    static Vector<IPropertyDescriptor> getDescriptors() {
     	return DESCRIPTORS;
 	}
 
@@ -137,10 +137,6 @@ public ConfigResultsElement(AbstractResults results, ResultsElement parent) {
 	super(results, parent);
 }
 
-public int compareTo(Object o) {
-	// TODO Auto-generated method stub
-	return super.compareTo(o);
-}
 ResultsElement createChild(AbstractResults testResults) {
 	return new BuildResultsElement(testResults, this);
 }
@@ -188,7 +184,7 @@ public String getLabel(Object o) {
  * @see org.eclipse.ui.views.properties.IPropertySource#getPropertyDescriptors()
  */
 public IPropertyDescriptor[] getPropertyDescriptors() {
-	Vector descriptors = getDescriptors();
+	Vector<IPropertyDescriptor> descriptors = getDescriptors();
 	if (descriptors == null) {
 		descriptors = initDescriptors(getStatus());
 	}

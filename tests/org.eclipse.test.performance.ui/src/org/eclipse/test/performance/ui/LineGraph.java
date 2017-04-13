@@ -54,13 +54,13 @@ public class LineGraph {
 
 
     String fTitle;
-    List fItems;
+    List<GraphItem> fItems;
     Dim fDimension;
 
 
     public LineGraph(String title, Dim dim) {
         this.fTitle= title;
-        this.fItems= new ArrayList();
+        this.fItems= new ArrayList<GraphItem>();
         this.fDimension= dim;
     }
 
