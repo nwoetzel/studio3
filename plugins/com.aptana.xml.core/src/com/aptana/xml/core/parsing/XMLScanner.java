@@ -13,9 +13,6 @@ package com.aptana.xml.core.parsing;
 import java.io.Reader;
 import java.io.StringReader;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import beaver.Symbol;
 import beaver.Scanner;
 

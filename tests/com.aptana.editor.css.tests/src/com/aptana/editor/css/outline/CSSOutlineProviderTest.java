@@ -11,8 +11,6 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
-
 import com.aptana.css.core.parsing.CSSParser;
 import com.aptana.css.core.parsing.ast.CSSRuleNode;
 import com.aptana.editor.common.outline.CommonOutlineItem;

@@ -4,8 +4,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import com.aptana.js.core.model.ReturnTypeElement;
 
-import junit.framework.TestCase;
-
 public class ReturnTypeElementTest
 {
 

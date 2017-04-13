@@ -10,11 +10,6 @@ package com.aptana.css.core.tests;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
-
 import com.aptana.css.core.index.CSSIndexTests;
 import com.aptana.css.core.internal.build.CSSBuildParticipantsTests;
 import com.aptana.css.core.parsing.CSSParsingTests;

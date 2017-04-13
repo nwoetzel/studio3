@@ -7,8 +7,6 @@ import java.util.List;
 
 import com.aptana.js.core.inferencing.JSTypeUtil;
 
-import junit.framework.TestCase;
-
 public class JSTypeUtilTest
 {
 

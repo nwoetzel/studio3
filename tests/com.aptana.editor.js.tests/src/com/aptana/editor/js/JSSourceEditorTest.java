@@ -12,8 +12,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.File;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.ui.IWorkbenchPage;

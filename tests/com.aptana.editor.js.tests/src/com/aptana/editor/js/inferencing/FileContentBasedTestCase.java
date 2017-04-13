@@ -15,8 +15,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 

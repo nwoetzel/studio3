@@ -9,12 +9,7 @@ package com.aptana.git.ui.internal.actions;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.window.Window;
-
 import com.aptana.git.core.model.GitRepository;
-import com.aptana.ui.util.UIUtils;
 
 public class CommitHandler extends AbstractGitHandler
 {

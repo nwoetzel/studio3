@@ -6,8 +6,6 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.jobs.Job;
 
 import com.aptana.core.tests.TestProject;

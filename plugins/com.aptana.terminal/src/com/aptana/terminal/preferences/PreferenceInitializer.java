@@ -11,7 +11,6 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.core.runtime.preferences.DefaultScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.terminal.TerminalPlugin;
 
 public class PreferenceInitializer extends AbstractPreferenceInitializer

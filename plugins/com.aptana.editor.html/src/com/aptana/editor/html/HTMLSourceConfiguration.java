@@ -14,7 +14,6 @@ import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.ITokenScanner;
-import org.eclipse.jface.text.rules.MultiLineRule;
 import org.eclipse.jface.text.source.ISourceViewer;
 
 import com.aptana.css.core.ICSSConstants;

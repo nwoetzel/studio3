@@ -10,7 +10,6 @@ package com.aptana.editor.text.parsing;
 import com.aptana.parsing.AbstractParser;
 import com.aptana.parsing.IParseState;
 import com.aptana.parsing.WorkingParseResult;
-import com.aptana.parsing.ast.IParseRootNode;
 
 public class GenericTextParser extends AbstractParser
 {

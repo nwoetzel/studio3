@@ -25,8 +25,6 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.core.runtime.jobs.IJobChangeListener;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.team.core.RepositoryProvider;
-import org.eclipse.team.core.TeamException;
-
 import com.aptana.core.logging.IdeLog;
 import com.aptana.git.ui.GitUIPlugin;
 import com.aptana.git.ui.internal.actions.AbstractGitHandler;

@@ -11,7 +11,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.eclipse.core.resources.IMarker;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;

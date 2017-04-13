@@ -11,8 +11,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import com.aptana.git.ui.DiffFormatter;
 
-import junit.framework.TestCase;
-
 public class DiffFormatterTest
 {
 	

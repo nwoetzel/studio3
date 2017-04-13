@@ -1,7 +1,6 @@
 package com.aptana.css.core.parsing;
 
 import com.aptana.parsing.ast.IParseNode;
-import com.aptana.parsing.ast.IParseRootNode;
 import com.aptana.parsing.WorkingParseResult;
 import com.aptana.parsing.ast.ParseError;
 import java.util.ArrayList;

@@ -13,8 +13,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
 import com.aptana.core.util.CollectionsUtil;
 import com.aptana.core.util.ListCrossProduct;
 import com.aptana.js.core.model.PropertyElement;

@@ -11,7 +11,6 @@ import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.text.BadLocationException;

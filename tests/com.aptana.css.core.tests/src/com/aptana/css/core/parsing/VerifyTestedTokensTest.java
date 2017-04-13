@@ -14,8 +14,6 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
 import com.aptana.core.util.StringUtil;
 
 /**

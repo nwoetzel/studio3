@@ -16,8 +16,6 @@ import java.net.URI;
 import java.net.URL;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 

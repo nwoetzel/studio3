@@ -11,8 +11,6 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import junit.framework.TestCase;
-
 import com.aptana.editor.xml.XMLPlugin;
 import com.aptana.parsing.ParseState;
 import com.aptana.xml.core.parsing.XMLParser;

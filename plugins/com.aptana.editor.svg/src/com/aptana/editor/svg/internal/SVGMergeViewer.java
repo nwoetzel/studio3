@@ -8,9 +8,7 @@
 package com.aptana.editor.svg.internal;
 
 import org.eclipse.compare.CompareConfiguration;
-import org.eclipse.compare.contentmergeviewer.TextMergeViewer;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.text.IDocumentExtension3;
 import org.eclipse.jface.text.IDocumentPartitioner;
 import org.eclipse.jface.text.TextViewer;
 import org.eclipse.jface.text.source.SourceViewer;

@@ -3,9 +3,6 @@ package com.aptana.git.ui.internal;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
-import static org.junit.Assert.*;
-import junit.framework.TestCase;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.jface.viewers.IDecoration;

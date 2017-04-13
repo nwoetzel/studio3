@@ -13,7 +13,6 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 import java.io.IOException;
 
-import junit.framework.TestCase;
 import beaver.Symbol;
 
 public class SDocFlexScannerTest
