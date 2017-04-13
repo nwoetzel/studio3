@@ -20,7 +20,6 @@ import org.eclipse.ui.PlatformUI;
 import org.osgi.service.prefs.BackingStoreException;
 
 import com.aptana.core.logging.IdeLog;
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.debug.core.DebugOptionsManager;
 import com.aptana.js.debug.core.model.JSDebugModel;
 import com.aptana.js.debug.ui.JSDebugUIPlugin;

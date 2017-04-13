@@ -549,7 +549,6 @@ public class NodePackageManager implements INodePackageManager
 	 * @param workingDir
 	 * @return
 	 */
-	@SuppressWarnings("resource")
 	private String readPackageVersion(String packageName, IPath workingDir) throws CoreException
 	{
 		if (workingDir == null)

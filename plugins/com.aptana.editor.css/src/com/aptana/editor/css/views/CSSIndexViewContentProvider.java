@@ -25,7 +25,6 @@ public class CSSIndexViewContentProvider implements ITreeContentProvider
 		// do nothing
 	}
 
-	@SuppressWarnings("unchecked")
 	public Object[] getChildren(Object parentElement)
 	{
 		List<?> result = Collections.emptyList();

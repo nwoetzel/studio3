@@ -27,7 +27,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 import com.aptana.core.logging.IdeLog;
-import com.aptana.core.util.EclipseUtil;
 import com.aptana.js.debug.core.ILaunchConfigurationConstants;
 import com.aptana.js.debug.core.JSDebugPlugin;
 import com.aptana.js.debug.core.JSLaunchConfigurationHelper;
