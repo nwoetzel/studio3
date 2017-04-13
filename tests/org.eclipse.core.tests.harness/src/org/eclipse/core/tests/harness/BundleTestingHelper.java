@@ -13,7 +13,7 @@ package org.eclipse.core.tests.harness;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
