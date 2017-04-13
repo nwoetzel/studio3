@@ -29,7 +29,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -387,8 +386,8 @@ public class CloneJob extends Job
 				}
 			}
 
-			project.create(desc, new SubProgressMonitor(monitor, 30));
-			project.open(IResource.BACKGROUND_REFRESH, new SubProgressMonitor(monitor, 50));
+			project.create(desc, SubMonitor.convert(monitor, 30));
+			project.open(IResource.BACKGROUND_REFRESH, SubMonitor.convert(monitor, 50));
 			createdProjects.add(project);
 
 			if (autoAttach)

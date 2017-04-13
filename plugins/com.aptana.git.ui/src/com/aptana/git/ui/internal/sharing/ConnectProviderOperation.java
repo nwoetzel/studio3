@@ -14,7 +14,7 @@ import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.osgi.util.NLS;
 
 import com.aptana.git.core.GitPlugin;
@@ -63,7 +63,7 @@ public class ConnectProviderOperation implements IWorkspaceRunnable
 			for (IProject project : projects)
 			{
 				m.setTaskName(NLS.bind(Messages.ConnectProviderOperation_ConnectingProjectJob_Title, project.getName()));
-				getGitRepositoryManager().attachExisting(project, new SubProgressMonitor(m, 100));
+				getGitRepositoryManager().attachExisting(project, SubMonitor.convert(m, 100));
 			}
 		}
 		finally

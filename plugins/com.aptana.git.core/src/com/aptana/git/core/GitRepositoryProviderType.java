@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.team.core.RepositoryProviderType;
 
@@ -50,7 +50,7 @@ public class GitRepositoryProviderType extends RepositoryProviderType
 									toConnect.getName()), 100);
 					try
 					{
-						getGitRepositoryManager().attachExisting(toConnect, new SubProgressMonitor(monitor, 100));
+						getGitRepositoryManager().attachExisting(toConnect, SubMonitor.convert(monitor, 100));
 						monitor.done();
 					}
 					catch (CoreException e)
