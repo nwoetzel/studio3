@@ -38,7 +38,6 @@ import com.aptana.samples.model.IProjectSample;
 import com.aptana.samples.model.SamplesReference;
 import com.aptana.samples.ui.SamplesUIPlugin;
 import com.aptana.samples.ui.handlers.ImportSampleHandler;
-import com.aptana.theme.ThemePlugin;
 import com.aptana.ui.util.UIUtils;
 
 /**

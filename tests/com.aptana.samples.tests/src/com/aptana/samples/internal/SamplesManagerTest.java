@@ -13,8 +13,6 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import com.aptana.samples.ISamplesManager;
 import com.aptana.samples.SamplesPlugin;
 import com.aptana.samples.model.IProjectSample;

@@ -12,11 +12,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import com.aptana.samples.internal.SamplesManagerTest;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
-
 @RunWith(Suite.class)
 @SuiteClasses({SamplesManagerTest.class, })
 public class AllTests
