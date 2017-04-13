@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 
 import com.aptana.core.util.FileUtil;
 import com.aptana.ide.core.io.IConnectionPoint;
@@ -28,7 +28,7 @@ public class SyncEventHandlerAdapterWithProgressMonitor extends SyncEventHandler
 	private static final int PATH_DISPLAY_CHARACTERS = 40;
 
 	private IProgressMonitor monitor;
-	private Map<VirtualFileSyncPair, SubProgressMonitor> itemsProgress = new HashMap<VirtualFileSyncPair, SubProgressMonitor>();
+	private Map<VirtualFileSyncPair, IProgressMonitor> itemsProgress = new HashMap<VirtualFileSyncPair, IProgressMonitor>();
 	private Map<VirtualFileSyncPair, Long> itemsTransfer = new HashMap<VirtualFileSyncPair, Long>();
 
 	/**
@@ -70,7 +70,7 @@ public class SyncEventHandlerAdapterWithProgressMonitor extends SyncEventHandler
 	@Override
 	public void syncDone(VirtualFileSyncPair item, IProgressMonitor monitor)
 	{
-		SubProgressMonitor itemProgressMonitor = itemsProgress.get(item);
+		SubMonitor itemProgressMonitor = SubMonitor.convert(itemsProgress.get(item));
 		if (itemProgressMonitor != null)
 		{
 			itemProgressMonitor.done();
@@ -89,7 +89,7 @@ public class SyncEventHandlerAdapterWithProgressMonitor extends SyncEventHandler
 	@Override
 	public boolean syncErrorEvent(VirtualFileSyncPair item, Exception e, IProgressMonitor monitor)
 	{
-		SubProgressMonitor itemProgressMonitor = itemsProgress.get(item);
+		SubMonitor itemProgressMonitor = SubMonitor.convert(itemsProgress.get(item));
 		if (itemProgressMonitor != null)
 		{
 			itemProgressMonitor.done();
@@ -108,10 +108,10 @@ public class SyncEventHandlerAdapterWithProgressMonitor extends SyncEventHandler
 	@Override
 	public boolean syncEvent(VirtualFileSyncPair item, int index, int totalItems, IProgressMonitor monitor)
 	{
-		SubProgressMonitor itemProgressMonitor = itemsProgress.get(item);
+		SubMonitor itemProgressMonitor = SubMonitor.convert(itemsProgress.get(item));
 		if (itemProgressMonitor == null && item != null)
 		{
-			itemProgressMonitor = new SubProgressMonitor(monitor, 1);
+			itemProgressMonitor = SubMonitor.convert(monitor, 1);
 			itemsProgress.put(item, itemProgressMonitor);
 			itemsTransfer.put(item, Long.valueOf(0));
 			monitor.subTask(FileUtil.compressPath(item.getRelativePath(), PATH_DISPLAY_CHARACTERS));
@@ -129,7 +129,7 @@ public class SyncEventHandlerAdapterWithProgressMonitor extends SyncEventHandler
 	@Override
 	public void syncTransferring(VirtualFileSyncPair item, long bytes, IProgressMonitor monitor)
 	{
-		SubProgressMonitor itemProgressMonitor = itemsProgress.get(item);
+		SubMonitor itemProgressMonitor = SubMonitor.convert(itemsProgress.get(item));
 		if (itemProgressMonitor != null)
 		{
 			long delta = bytes - ((Long) itemsTransfer.get(item));
