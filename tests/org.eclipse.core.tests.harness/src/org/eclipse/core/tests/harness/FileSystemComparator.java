@@ -13,7 +13,7 @@ package org.eclipse.core.tests.harness;
 
 import java.io.*;
 import java.util.*;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /** 
  * A utility class that compares file system states. It is able to take snapshot of the file system and save it into a 
