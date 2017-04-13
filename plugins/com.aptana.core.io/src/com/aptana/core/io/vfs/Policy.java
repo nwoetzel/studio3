@@ -12,7 +12,7 @@ package com.aptana.core.io.vfs;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 
 /**
  * @author Max Stepanov
@@ -35,7 +35,7 @@ import org.eclipse.core.runtime.SubProgressMonitor;
 			return new NullProgressMonitor();
 		if (monitor instanceof NullProgressMonitor)
 			return monitor;
-		return new SubProgressMonitor(monitor, ticks);
+		return SubMonitor.convert(monitor, ticks);
 	}
 
 	public static void checkCanceled(IProgressMonitor monitor) {

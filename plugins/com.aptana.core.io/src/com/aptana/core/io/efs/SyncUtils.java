@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 
 import com.aptana.core.io.vfs.IExtendedFileStore;
 import com.aptana.core.util.ProgressMonitorInterrupter;
@@ -166,7 +166,7 @@ public final class SyncUtils
 		{
 			return monitor;
 		}
-		return new SubProgressMonitor(monitor, ticks);
+		return SubMonitor.convert(monitor, ticks);
 	}
 
 	private static void checkCanceled(IProgressMonitor monitor)

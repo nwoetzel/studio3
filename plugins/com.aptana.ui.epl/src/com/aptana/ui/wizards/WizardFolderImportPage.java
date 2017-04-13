@@ -38,7 +38,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -645,12 +645,12 @@ public class WizardFolderImportPage extends WizardPage implements IOverwriteQuer
 			protected void execute(IProgressMonitor monitor) throws CoreException
 			{
 				monitor.beginTask("", 2000); //$NON-NLS-1$
-				project.create(record.description, new SubProgressMonitor(monitor, 1000));
+				project.create(record.description, SubMonitor.convert(monitor, 1000));
 				if (monitor.isCanceled())
 				{
 					throw new OperationCanceledException();
 				}
-				project.open(IResource.BACKGROUND_REFRESH, new SubProgressMonitor(monitor, 1000));
+				project.open(IResource.BACKGROUND_REFRESH, SubMonitor.convert(monitor, 1000));
 				project.setDescription(record.description, monitor);
 
 				// We close and open the project to apply the natures correctly
